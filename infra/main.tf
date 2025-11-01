@@ -89,7 +89,7 @@ module "backendaddresspool" {
 
 module "nic_bp_association" {
   source             = "../modules/loadBalancer/azurerm_nic_bp_association"
-  depends_on         = [module.backendaddresspool]
+  depends_on         = [module.backendaddresspool, module.nic_nsg_assoc_module , module.nic_module]
   nic_bp_association = var.nic_bp_association
 }
 
